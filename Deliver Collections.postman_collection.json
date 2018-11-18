@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "8741f49b-42ae-4114-9555-abfd5e0cd1e0",
+		"name": "Deliver Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FINDALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/bills/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bills",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"conta 1\",\n\t\"originalValue\":\"100\",\n\t\"dueDate\":\"2018-11-18T22:16:52.669+0000\",\n\t\"payDay\":\"2018-11-19T22:16:52.669+0000\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bills/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bills",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "696efc8c-d47d-4cb3-a720-d3256bbce988",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8f625016-bc06-4852-9613-4663481bea16",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
