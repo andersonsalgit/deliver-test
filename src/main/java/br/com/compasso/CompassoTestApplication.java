@@ -1,4 +1,4 @@
-package br.com.deliver;
+package br.com.compasso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class DeliverTestApplication {
+public class CompassoTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DeliverTestApplication.class, args);
+		SpringApplication.run(CompassoTestApplication.class, args);
 	}
 }

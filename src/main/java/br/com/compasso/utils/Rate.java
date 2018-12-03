@@ -1,4 +1,4 @@
-package br.com.deliver.utils;
+package br.com.compasso.utils;
 
 public enum Rate {
 

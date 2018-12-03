@@ -1,6 +1,5 @@
-package br.com.deliver.model;
+package br.com.compasso.model;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,48 +8,40 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "TB_BILL_PAY")
+@Table(name = "TB_VOTO")
 @EntityListeners(AuditingEntityListener.class)
-public class BillsPayModel {
+public class VotoModel {
 
 	@Id
+	@Column(name = "voto_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)	
     private Long id;
 	
-	@NotNull @NotBlank
-	@Column(nullable = false)
-	private String name;
-
 	@NotNull
-	@Column(nullable = false)
-	private BigDecimal originalValue;
-	
 	@Column
-	private BigDecimal correctedValue;
+	private boolean voto;
 	
-	@NotNull
-	@Column(nullable = false, updatable = false)
+	@ManyToOne
+    @JoinColumn(name = "pauta_id", nullable = false)
+	private PautaModel pautaModel;
+	
+	@Column(nullable = false, updatable = false, name = "data_voto")
     @Temporal(TemporalType.TIMESTAMP)
-	private Date dueDate;
-	
-	@NotNull
-	@Column(nullable = true)
-    @Temporal(TemporalType.TIMESTAMP)
-	private Date payDay;
-	
-	@Column
-	private int delayedDays;
+	@CreatedDate
+	private Date dataVoto;
 	
 }

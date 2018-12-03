@@ -1,4 +1,4 @@
-package br.com.deliver.exception;
+package br.com.compasso.exception;
 
 import org.springframework.http.HttpStatus;
 
